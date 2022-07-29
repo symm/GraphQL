@@ -20,7 +20,10 @@ jobs:
         run: composer validate
 
       - name: Install dependencies
-        run: composer install --prefer-dist --no-progress --no-suggest
+        run: composer install --prefer-dist --no-progress
 
       - name: Run PHPUnit
         run: vendor/bin/phpunit
+
+      - name: Run static analysis
+        run: vendor/bin/phpstan analyze src -c phpstan.neon -l 1
