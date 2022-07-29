@@ -11,7 +11,7 @@ use Youshido\GraphQL\Type\Object\AbstractObjectType;
 use Youshido\GraphQL\Type\Scalar\IntType;
 use Youshido\GraphQL\Type\Scalar\StringType;
 
-class Issue193Test extends \PHPUnit_Framework_TestCase
+class Issue193Test extends \PHPUnit\Framework\TestCase
 {
     public function testResolvedInterfacesShouldBeRegistered()
     {

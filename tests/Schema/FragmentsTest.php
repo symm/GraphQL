@@ -85,7 +85,7 @@ class ReservationInterface extends AbstractInterfaceType
 
 }
 
-class FragmentsTest extends \PHPUnit_Framework_TestCase
+class FragmentsTest extends \PHPUnit\Framework\TestCase
 {
 
     /**

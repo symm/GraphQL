@@ -15,7 +15,7 @@ use Youshido\GraphQL\Validator\ConfigValidator\ConfigValidator;
 use Youshido\Tests\DataProvider\TestObjectType;
 use Youshido\Tests\DataProvider\TestUnionType;
 
-class UnionTypeTest extends \PHPUnit_Framework_TestCase
+class UnionTypeTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testInlineCreation()
@@ -56,11 +56,9 @@ class UnionTypeTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('test', $type->resolveType('test'));
     }
 
-    /**
-     * @expectedException Youshido\GraphQL\Exception\ConfigurationException
-     */
     public function testInvalidTypesWithScalar()
     {
+        $this->expectException(\Youshido\GraphQL\Exception\ConfigurationException::class);
         $type = new UnionType([
             'name'        => 'Car',
             'description' => 'Union collect cars types',
@@ -74,11 +72,9 @@ class UnionTypeTest extends \PHPUnit_Framework_TestCase
         ConfigValidator::getInstance()->assertValidConfig($type->getConfig());
     }
 
-    /**
-     * @expectedException Youshido\GraphQL\Exception\ConfigurationException
-     */
     public function testInvalidTypes()
     {
+        $this->expectException(\Youshido\GraphQL\Exception\ConfigurationException::class);
         $type = new UnionType([
             'name'        => 'Car',
             'description' => 'Union collect cars types',

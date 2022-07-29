@@ -21,7 +21,7 @@ use Youshido\GraphQL\Validator\ConfigValidator\ConfigValidator;
 use Youshido\Tests\DataProvider\TestField;
 use Youshido\Tests\DataProvider\TestResolveInfo;
 
-class FieldTest extends \PHPUnit_Framework_TestCase
+class FieldTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testInlineFieldCreation()
@@ -87,10 +87,10 @@ class FieldTest extends \PHPUnit_Framework_TestCase
      * @param $fieldConfig
      *
      * @dataProvider invalidFieldProvider
-     * @expectedException Youshido\GraphQL\Exception\ConfigurationException
      */
     public function testInvalidFieldParams($fieldConfig)
     {
+        $this->expectException(\Youshido\GraphQL\Exception\ConfigurationException::class);
         $field = new Field($fieldConfig);
         ConfigValidator::getInstance()->assertValidConfig($field->getConfig());
     }

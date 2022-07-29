@@ -31,7 +31,7 @@ class uid
     }
 }
 
-class NonNullableTest extends \PHPUnit_Framework_TestCase
+class NonNullableTest extends \PHPUnit\Framework\TestCase
 {
 
     /**

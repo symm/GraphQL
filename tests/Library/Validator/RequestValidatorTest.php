@@ -19,17 +19,16 @@ use Youshido\GraphQL\Parser\Ast\Query;
 use Youshido\GraphQL\Parser\Location;
 use Youshido\GraphQL\Validator\RequestValidator\RequestValidator;
 
-class RequestValidatorTest extends \PHPUnit_Framework_TestCase
+class RequestValidatorTest extends \PHPUnit\Framework\TestCase
 {
 
     /**
-     * @expectedException \Youshido\GraphQL\Exception\Parser\InvalidRequestException
      * @dataProvider invalidRequestProvider
-     *
      * @param Request $request
      */
     public function testInvalidRequests(Request $request)
     {
+        $this->expectException(\Youshido\GraphQL\Exception\Parser\InvalidRequestException::class);
         (new RequestValidator())->validate($request);
     }
 

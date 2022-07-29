@@ -14,7 +14,7 @@ use Youshido\GraphQL\Type\Scalar\StringType;
 use Youshido\Tests\DataProvider\TestListType;
 
 
-class ListTypeTest extends \PHPUnit_Framework_TestCase
+class ListTypeTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testInline()
@@ -33,6 +33,9 @@ class ListTypeTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(new StringType(), $listType->getNamedType());
     }
 
+    /**
+     * @doesNotPerformAssertions
+     */
     public function testListOfInputsWithArguments()
     {
 

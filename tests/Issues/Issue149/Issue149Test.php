@@ -11,7 +11,7 @@ use Youshido\GraphQL\Type\Scalar\IdType;
 use Youshido\GraphQL\Type\Scalar\IntType;
 use Youshido\GraphQL\Type\Scalar\StringType;
 
-class Issue149Test extends \PHPUnit_Framework_TestCase
+class Issue149Test extends \PHPUnit\Framework\TestCase
 {
     public function testInternalVariableArgument()
     {

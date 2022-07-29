@@ -8,6 +8,7 @@
 
 namespace Youshido\Tests\Schema;
 
+use Prophecy\PhpUnit\ProphecyTrait;
 use Youshido\GraphQL\Config\Schema\SchemaConfig;
 use Youshido\GraphQL\Execution\DeferredResolver;
 use Youshido\GraphQL\Execution\Processor;
@@ -186,8 +187,9 @@ class DeferredSchema extends AbstractSchema
 /**
  * Test the deferred resolving under different circumstances.
  */
-class DeferredTest extends \PHPUnit_Framework_TestCase
+class DeferredTest extends \PHPUnit\Framework\TestCase
 {
+    use ProphecyTrait;
 
     /**
      * @var Processor

@@ -15,7 +15,7 @@ use Youshido\GraphQL\Type\Object\ObjectType;
 use Youshido\GraphQL\Type\Scalar\StringType;
 use Youshido\Tests\DataProvider\TestTimeType;
 
-class ScalarExtendTypeTest extends \PHPUnit_Framework_TestCase
+class ScalarExtendTypeTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testType()

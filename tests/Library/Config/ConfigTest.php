@@ -8,6 +8,7 @@
 
 namespace Youshido\Tests\Library\Config;
 
+use Youshido\GraphQL\Exception\ConfigurationException;
 use Youshido\GraphQL\Type\Enum\EnumType;
 use Youshido\GraphQL\Type\Object\ObjectType;
 use Youshido\GraphQL\Type\Scalar\IdType;
@@ -18,30 +19,27 @@ use Youshido\Tests\DataProvider\TestConfig;
 use Youshido\Tests\DataProvider\TestConfigExtraFields;
 use Youshido\Tests\DataProvider\TestConfigInvalidRule;
 
-class ConfigTest extends \PHPUnit_Framework_TestCase
+class ConfigTest extends \PHPUnit\Framework\TestCase
 {
 
-    /**
-     * @expectedException Youshido\GraphQL\Exception\ConfigurationException
-     */
     public function testEmptyParams()
     {
+        $this->expectException(ConfigurationException::class);
+        $this->expectExceptionMessage("Config for Type should be an array");
         new TestConfig([]);
     }
 
-    /**
-     * @expectedException Youshido\GraphQL\Exception\ConfigurationException
-     */
     public function testInvalidParams()
     {
+        $this->expectException(ConfigurationException::class);
+        $this->expectExceptionMessage('Field "id" is not expected');
         ConfigValidator::getInstance()->assertValidConfig(new TestConfig(['id' => 1]));
     }
 
-    /**
-     * @expectedException \Exception
-     */
     public function testInvalidMethod()
     {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage("Call to undefined method doSomethingStrange");
         $config = new TestConfig(['name' => 'test']);
         $config->doSomethingStrange();
     }
@@ -95,29 +93,25 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('extraValue', $configExtraFields->get('extraField'));
     }
 
-    /**
-     * @expectedException Youshido\GraphQL\Exception\ConfigurationException
-     */
     public function testFinalRule()
     {
+        $this->expectException(ConfigurationException::class);
+        $this->expectExceptionMessage('Field "resolve" is required');
         ConfigValidator::getInstance()->assertValidConfig(new TestConfig(['name' => 'Test' . 'final'], null, true));
     }
 
-    /**
-     * @expectedException Youshido\GraphQL\Exception\ConfigurationException
-     */
     public function testInvalidRule()
     {
+        $this->expectException(ConfigurationException::class);
+        $this->expectExceptionMessage('Field "invalidRuleField" has invalid rule "1"');
         ConfigValidator::getInstance()->assertValidConfig(
             new TestConfigInvalidRule(['name' => 'Test', 'invalidRuleField' => 'test'], null, null)
         );
     }
 
-    /**
-     * @expectedException Youshido\GraphQL\Exception\ConfigurationException
-     */
     public function testEnumConfig()
     {
+        $this->expectException(ConfigurationException::class);
         $enumType = new EnumType([
             'name'   => 'Status',
             'values' => [

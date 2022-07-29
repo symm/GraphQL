@@ -33,7 +33,7 @@ class TokenizerTestingParser extends Parser {
     }
 }
 
-class ParserTest extends \PHPUnit_Framework_TestCase
+class ParserTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testEmptyParser()
@@ -50,11 +50,9 @@ class ParserTest extends \PHPUnit_Framework_TestCase
         ], $parser->parse());
     }
 
-    /**
-     * @expectedException Youshido\GraphQL\Exception\Parser\SyntaxErrorException
-     */
     public function testInvalidSelection()
     {
+        $this->expectException(\Youshido\GraphQL\Exception\Parser\SyntaxErrorException::class);
         $parser = new Parser();
         $data   = $parser->parse('
         {
@@ -141,10 +139,10 @@ GRAPHQL;
      * @param $query string
      *
      * @dataProvider wrongQueriesProvider
-     * @expectedException Youshido\GraphQL\Exception\Parser\SyntaxErrorException
      */
     public function testWrongQueries($query)
     {
+        $this->expectException(\Youshido\GraphQL\Exception\Parser\SyntaxErrorException::class);
         $parser = new Parser();
 
         $parser->parse($query);
