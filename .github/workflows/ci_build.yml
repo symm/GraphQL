@@ -1,8 +1,15 @@
 on: [push, pull_request]
 
 jobs:
-  PHP_7:
+  run:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-versions: ['7.4', '8.0', '8.1']
+        include:
+        - operating-system: 'ubuntu-latest'
+          php-versions: '7.2'
+          phpunit-versions: '8.5.21'
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -10,7 +17,7 @@ jobs:
       - name: Setup PHP with tools
         uses: shivammathur/setup-php@2.21.1
         with:
-          php-version: '7.4'
+          php-version: ${{ matrix.php-versions }}
           tools: composer
 
       - name: Validate composer.json and composer.lock
