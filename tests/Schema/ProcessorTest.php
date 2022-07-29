@@ -730,7 +730,7 @@ class ProcessorTest extends \PHPUnit\Framework\TestCase
                                     ]
                                 ),
                                 'cost'    => function ($args, $context, $childCost) {
-                                    $argsCost = isset($args['cost']) ? $args['cost'] : 1;
+                                    $argsCost = $args['cost'] ?? 1;
 
                                     return 1 + $argsCost * $childCost;
                                 },

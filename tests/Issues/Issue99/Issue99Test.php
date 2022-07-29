@@ -10,8 +10,8 @@ use Youshido\GraphQL\Execution\Processor;
  */
 class Issue99Test extends \PHPUnit\Framework\TestCase
 {
-    const BUG_NOT_EXISTS_VALUE = 'bug not exists';
-    const BUG_EXISTS_VALUE = 'bug exists';
+    public const BUG_NOT_EXISTS_VALUE = 'bug not exists';
+    public const BUG_EXISTS_VALUE = 'bug exists';
 
     public function testQueryDateTimeTypeWithDateParameter()
     {

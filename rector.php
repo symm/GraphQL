@@ -5,7 +5,7 @@ declare(strict_types=1);
 use Rector\CodeQuality\Rector\Class_\InlineConstructorDefaultToPropertyRector;
 use Rector\Config\RectorConfig;
 use Rector\Set\ValueObject\LevelSetList;
-use Rector\PHPUnit\Set\PHPUnitSetList;
+use Rector\PHPUnit\Set\PHPUnitLevelSetList;
 
 return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->paths([
@@ -18,10 +18,7 @@ return static function (RectorConfig $rectorConfig): void {
 
     // define sets of rules
     $rectorConfig->sets([
-        PHPUnitSetList::PHPUNIT_50,
-        PHPUnitSetList::PHPUNIT_60,
-        PHPUnitSetList::PHPUNIT_70,
-        PHPUnitSetList::PHPUNIT_80,
-        PHPUnitSetList::PHPUNIT_90,
+        PHPUnitLevelSetList::UP_TO_PHPUNIT_90,
+        LevelSetList::UP_TO_PHP_73,
     ]);
 };

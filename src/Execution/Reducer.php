@@ -68,7 +68,7 @@ class Reducer
                 $queryCost = 0;
                 while ($results) {
                     // initial values come from advancing the generator via ->current, subsequent values come from ->send()
-                    list($queryField, $astField, $childCost) = $results;
+                    [$queryField, $astField, $childCost] = $results;
 
                     /**
                      * @var Query|FieldAst $queryField

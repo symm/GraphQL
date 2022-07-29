@@ -60,7 +60,7 @@ class Connection
                 'node'   => [
                     'type'        => $type,
                     'description' => 'The item at the end of the edge',
-                    'resolve'     => [__CLASS__, 'getNode'],
+                    'resolve'     => [self::class, 'getNode'],
                 ],
                 'cursor' => [
                     'type'        => TypeMap::TYPE_STRING,
@@ -92,17 +92,17 @@ class Connection
                 'totalCount' => [
                     'type'        => new NonNullType(new IntType()),
                     'description' => 'How many nodes.',
-                    'resolve'     => [__CLASS__, 'getTotalCount'],
+                    'resolve'     => [self::class, 'getTotalCount'],
                 ],
                 'pageInfo' => [
                     'type'        => new NonNullType(new PageInfoType()),
                     'description' => 'Information to aid in pagination.',
-                    'resolve'     => [__CLASS__, 'getPageInfo'],
+                    'resolve'     => [self::class, 'getPageInfo'],
                 ],
                 'edges'    => [
                     'type'        => new ListType(self::edgeDefinition($type, $name, $config)),
                     'description' => 'A list of edges.',
-                    'resolve'     => [__CLASS__, 'getEdges'],
+                    'resolve'     => [self::class, 'getEdges'],
                 ]
             ], $connectionFields)
         ]);
@@ -112,21 +112,21 @@ class Connection
 
     public static function getTotalCount($value)
     {
-        return isset($value['totalCount']) ? $value['totalCount'] : -1;
+        return $value['totalCount'] ?? -1;
     }
 
     public static function getEdges($value)
     {
-        return isset($value['edges']) ? $value['edges'] : null;
+        return $value['edges'] ?? null;
     }
 
     public static function getPageInfo($value)
     {
-        return isset($value['pageInfo']) ? $value['pageInfo'] : null;
+        return $value['pageInfo'] ?? null;
     }
 
     public static function getNode($value)
     {
-        return isset($value['node']) ? $value['node'] : null;
+        return $value['node'] ?? null;
     }
 }

@@ -44,7 +44,7 @@ class LoadTest extends \PHPUnit\Framework\TestCase
         $data = [];
         for ($i = 1; $i <= 10000; ++$i) {
             $authors = [];
-            while (count($authors) < rand(1, 4)) {
+            while (count($authors) < random_int(1, 4)) {
                 $authors[] = [
                     'name' => 'Author ' . substr(md5(time()), 0, 4)
                 ];
@@ -72,7 +72,7 @@ class LoadTest extends \PHPUnit\Framework\TestCase
         return true;
         $p->processPayload('{ posts { id, title, authors { name } } }');
         $res = $p->getResponseData();
-        echo "Count: " . count($res['data']['posts']) . "\n";
+        echo "Count: " . (is_array($res['data']['posts']) || $res['data']['posts'] instanceof \Countable ? count($res['data']['posts']) : 0) . "\n";
         var_dump($res['data']['posts'][0]);
         printf("Test Time: %04f\n", microtime(true) - $time);
     }

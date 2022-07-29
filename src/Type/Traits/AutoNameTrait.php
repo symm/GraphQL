@@ -22,7 +22,7 @@ trait AutoNameTrait
             return $this->config->getName();
         }
 
-        $className = get_called_class();
+        $className = static::class;
 
         if ($prevPos = strrpos($className, '\\')) {
             $className = substr($className, $prevPos + 1);

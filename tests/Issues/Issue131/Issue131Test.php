@@ -50,7 +50,7 @@ class Issue131Test extends \PHPUnit\Framework\TestCase
                         'resolve' => function ($source, $args) {
                             return [
                                 'id' => '1',
-                                'name' => sprintf('Meeting with %d beans', count($args['related_beans'])),
+                                'name' => sprintf('Meeting with %d beans', is_array($args['related_beans']) || $args['related_beans'] instanceof \Countable ? count($args['related_beans']) : 0),
                             ];
                         }
                     ]

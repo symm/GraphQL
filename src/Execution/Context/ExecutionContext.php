@@ -34,7 +34,7 @@ class ExecutionContext implements ExecutionContextInterface
     private $container;
 
     /** @var array */
-    private $typeFieldLookupTable;
+    private $typeFieldLookupTable = [];
 
     /**
      * ExecutionContext constructor.
@@ -47,8 +47,6 @@ class ExecutionContext implements ExecutionContextInterface
         $this->validateSchema();
 
         $this->introduceIntrospectionFields();
-
-        $this->typeFieldLookupTable = [];
     }
 
     /**

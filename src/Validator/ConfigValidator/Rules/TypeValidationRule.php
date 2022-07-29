@@ -74,7 +74,7 @@ class TypeValidationRule implements ValidationRuleInterface
                 return TypeService::isInputType($data);
 
             case TypeService::TYPE_ARRAY_OF_INTERFACES:
-                return $this->isArrayOfInterfaces($data);
+                return self::isArrayOfInterfaces($data);
 
             default:
                 return false;

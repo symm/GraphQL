@@ -37,11 +37,11 @@ class SchemaTest extends \PHPUnit\Framework\TestCase
         $this->assertTrue($schema->getQueryType()->hasFields());
         $this->assertTrue($schema->getMutationType()->hasFields());
 
-        $this->assertEquals(1, count($schema->getMutationType()->getFields()));
+        $this->assertEquals(1, is_array($schema->getMutationType()->getFields()) || $schema->getMutationType()->getFields() instanceof \Countable ? count($schema->getMutationType()->getFields()) : 0);
 
         $schema->addMutationField('changeUser', ['type' => new TestObjectType(), 'resolve' => function () {
         }]);
-        $this->assertEquals(2, count($schema->getMutationType()->getFields()));
+        $this->assertEquals(2, is_array($schema->getMutationType()->getFields()) || $schema->getMutationType()->getFields() instanceof \Countable ? count($schema->getMutationType()->getFields()) : 0);
 
     }
 
@@ -59,7 +59,7 @@ class SchemaTest extends \PHPUnit\Framework\TestCase
 
         $this->assertTrue($unserialized->getQueryType()->hasFields());
         $this->assertFalse($unserialized->getMutationType()->hasFields());
-        $this->assertEquals(1, count($unserialized->getQueryType()->getFields()));
+        $this->assertEquals(1, is_array($unserialized->getQueryType()->getFields()) || $unserialized->getQueryType()->getFields() instanceof \Countable ? count($unserialized->getQueryType()->getFields()) : 0);
     }
 
     public function testCustomTypes()

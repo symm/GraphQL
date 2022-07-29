@@ -43,7 +43,7 @@ use Youshido\GraphQL\Validator\ResolveValidator\ResolveValidatorInterface;
 class Processor
 {
 
-    const TYPE_NAME_QUERY = '__typename';
+    public const TYPE_NAME_QUERY = '__typename';
 
     /** @var ExecutionContext */
     protected $executionContext;

@@ -11,7 +11,7 @@ namespace Youshido\GraphQL\Relay\Connection;
 class ArrayConnection
 {
 
-    const PREFIX = 'arrayconnection:';
+    public const PREFIX = 'arrayconnection:';
 
     public static function cursorForObjectInConnection($data, $object)
     {
@@ -96,10 +96,10 @@ class ArrayConnection
 
     public static function connectionFromArraySlice(array $data, array $args, $sliceStart, $arrayLength)
     {
-        $after  = isset($args['after']) ? $args['after'] : null;
-        $before = isset($args['before']) ? $args['before'] : null;
-        $first  = isset($args['first']) ? $args['first'] : null;
-        $last   = isset($args['last']) ? $args['last'] : null;
+        $after  = $args['after'] ?? null;
+        $before = $args['before'] ?? null;
+        $first  = $args['first'] ?? null;
+        $last   = $args['last'] ?? null;
 
         $sliceEnd = $sliceStart + count($data);
 

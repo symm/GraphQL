@@ -20,7 +20,7 @@ class DateTimeType extends AbstractScalarType
 
     public function getName()
     {
-        return 'DateTime';
+        return \DateTime::class;
     }
 
     public function isValidValue($value)

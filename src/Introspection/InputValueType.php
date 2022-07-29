@@ -36,7 +36,7 @@ class InputValueType extends AbstractObjectType
     public function resolveDefaultValue($value)
     {
         $resolvedValue = $value->getConfig()->getDefaultValue();
-        return $resolvedValue === null ? $resolvedValue : str_replace('"', '', json_encode($resolvedValue));
+        return $resolvedValue === null ? $resolvedValue : str_replace('"', '', json_encode($resolvedValue, JSON_THROW_ON_ERROR));
     }
 
     public function build($config)

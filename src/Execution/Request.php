@@ -215,7 +215,7 @@ class Request
     public function setVariables($variables)
     {
         if (!is_array($variables)) {
-            $variables = json_decode($variables, true);
+            $variables = json_decode($variables, true, 512, JSON_THROW_ON_ERROR);
         }
 
         $this->variables = $variables;

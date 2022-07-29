@@ -86,11 +86,11 @@ abstract class AbstractInputObjectType extends AbstractType
                 unset($requiredFields[$valueKey]);
             }
         }
-        if (count($requiredFields)) {
-            $this->lastValidationError = sprintf('%s %s required on %s', implode(', ', array_keys($requiredFields)), count($requiredFields) > 1 ? 'are' : 'is', $typeConfig->getName());
+        if (count((array) $requiredFields)) {
+            $this->lastValidationError = sprintf('%s %s required on %s', implode(', ', array_keys($requiredFields)), count((array) $requiredFields) > 1 ? 'are' : 'is', $typeConfig->getName());
         }
 
-        return !(count($requiredFields) > 0);
+        return !(count((array) $requiredFields) > 0);
     }
 
     public function getKind()

@@ -41,7 +41,7 @@ abstract class AbstractField implements FieldInterface
         if (TypeService::isScalarType($config['type'])) {
             $config['type'] = TypeFactory::getScalarType($config['type']);
         }
-        $this->nameCache = isset($config['name']) ? $config['name'] : $this->getAutoName();
+        $this->nameCache = $config['name'] ?? $this->getAutoName();
 
         $this->config = new FieldConfig($config, $this, $this->isFinal);
         $this->build($this->config);
