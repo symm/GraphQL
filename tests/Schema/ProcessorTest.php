@@ -30,9 +30,12 @@ use Youshido\Tests\DataProvider\TestEnumType;
 use Youshido\Tests\DataProvider\TestInterfaceType;
 use Youshido\Tests\DataProvider\TestObjectType;
 use Youshido\Tests\DataProvider\TestSchema;
+use DMS\PHPUnitExtensions\ArraySubset\ArraySubsetAsserts;
+
 
 class ProcessorTest extends \PHPUnit\Framework\TestCase
 {
+    use ArraySubsetAsserts;
 
     private $_counter = 0;
 

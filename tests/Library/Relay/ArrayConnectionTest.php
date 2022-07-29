@@ -20,7 +20,7 @@ class ArrayConnectionTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals($offset, ArrayConnection::cursorToKey($cursor));
         $this->assertEquals($cursor, ArrayConnection::cursorForObjectInConnection($data, 'd'));
-        $this->assertNull(null, ArrayConnection::cursorToKey(null));
+        $this->assertNull(ArrayConnection::cursorToKey(null));
 
         $this->assertEquals($offset, ArrayConnection::cursorToOffsetWithDefault($cursor, 2));
         $this->assertEquals(2, ArrayConnection::cursorToOffsetWithDefault(null, 2));
