@@ -4,3 +4,4 @@ vendor/
 data/schema.graphql
 composer.lock
 .idea
+.phpunit.result.cache

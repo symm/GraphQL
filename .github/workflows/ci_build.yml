@@ -1,0 +1,23 @@
+on: [push, pull_request]
+
+jobs:
+  PHP_7:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup PHP with tools
+        uses: shivammathur/setup-php@2.21.1
+        with:
+          php-version: '7.4'
+          tools: composer
+
+      - name: Validate composer.json and composer.lock
+        run: composer validate
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
+
+      - name: Run PHPUnit
+        run: vendor/bin/phpunit
