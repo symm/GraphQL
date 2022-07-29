@@ -22,7 +22,7 @@ use Youshido\GraphQL\Type\Scalar\StringType;
 use Youshido\GraphQL\Validator\ConfigValidator\ConfigValidator;
 use Youshido\Tests\DataProvider\TestInputField;
 
-class InputFieldTest extends \PHPUnit_Framework_TestCase
+class InputFieldTest extends \PHPUnit\Framework\TestCase
 {
 
     private $introspectionQuery = <<<TEXT

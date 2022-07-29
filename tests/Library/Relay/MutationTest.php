@@ -14,7 +14,7 @@ use Youshido\GraphQL\Type\Scalar\IdType;
 use Youshido\GraphQL\Type\Scalar\IntType;
 use Youshido\GraphQL\Type\Scalar\StringType;
 
-class MutationTest extends \PHPUnit_Framework_TestCase
+class MutationTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testCreation()

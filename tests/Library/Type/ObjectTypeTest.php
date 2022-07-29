@@ -18,7 +18,7 @@ use Youshido\GraphQL\Validator\ConfigValidator\ConfigValidator;
 use Youshido\Tests\DataProvider\TestMutationObjectType;
 use Youshido\Tests\DataProvider\TestObjectType;
 
-class ObjectTypeTest extends \PHPUnit_Framework_TestCase
+class ObjectTypeTest extends \PHPUnit\Framework\TestCase
 {
 
     /**

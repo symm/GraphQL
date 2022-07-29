@@ -33,7 +33,7 @@ class TokenizerTestingParser extends Parser {
     }
 }
 
-class ParserTest extends \PHPUnit_Framework_TestCase
+class ParserTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testEmptyParser()

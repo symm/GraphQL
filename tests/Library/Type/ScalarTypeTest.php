@@ -15,7 +15,7 @@ use Youshido\GraphQL\Type\TypeFactory;
 use Youshido\GraphQL\Type\TypeMap;
 use Youshido\GraphQL\Type\TypeService;
 
-class ScalarTypeTest extends \PHPUnit_Framework_TestCase
+class ScalarTypeTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testScalarPrimitives()

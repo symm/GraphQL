@@ -21,7 +21,7 @@ use Youshido\GraphQL\Validator\ConfigValidator\ConfigValidator;
 use Youshido\Tests\DataProvider\TestField;
 use Youshido\Tests\DataProvider\TestResolveInfo;
 
-class FieldTest extends \PHPUnit_Framework_TestCase
+class FieldTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testInlineFieldCreation()

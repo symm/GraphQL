@@ -25,7 +25,7 @@ use Youshido\GraphQL\Type\Union\UnionType;
 use Youshido\Tests\DataProvider\TestEmptySchema;
 use Youshido\Tests\DataProvider\TestSchema;
 
-class IntrospectionTest extends \PHPUnit_Framework_TestCase
+class IntrospectionTest extends \PHPUnit\Framework\TestCase
 {
     private $introspectionQuery = <<<TEXT
 query IntrospectionQuery {

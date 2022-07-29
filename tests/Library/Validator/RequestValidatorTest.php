@@ -19,7 +19,7 @@ use Youshido\GraphQL\Parser\Ast\Query;
 use Youshido\GraphQL\Parser\Location;
 use Youshido\GraphQL\Validator\RequestValidator\RequestValidator;
 
-class RequestValidatorTest extends \PHPUnit_Framework_TestCase
+class RequestValidatorTest extends \PHPUnit\Framework\TestCase
 {
 
     /**

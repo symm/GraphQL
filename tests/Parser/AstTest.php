@@ -20,7 +20,7 @@ use Youshido\GraphQL\Parser\Ast\Query;
 use Youshido\GraphQL\Parser\Ast\TypedFragmentReference;
 use Youshido\GraphQL\Parser\Location;
 
-class AstTest extends \PHPUnit_Framework_TestCase
+class AstTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testArgument()

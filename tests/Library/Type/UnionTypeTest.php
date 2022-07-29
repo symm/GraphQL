@@ -15,7 +15,7 @@ use Youshido\GraphQL\Validator\ConfigValidator\ConfigValidator;
 use Youshido\Tests\DataProvider\TestObjectType;
 use Youshido\Tests\DataProvider\TestUnionType;
 
-class UnionTypeTest extends \PHPUnit_Framework_TestCase
+class UnionTypeTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testInlineCreation()

@@ -10,7 +10,7 @@ namespace Youshido\Tests\Library\Relay;
 
 use Youshido\GraphQL\Relay\Connection\ArrayConnection;
 
-class ArrayConnectionTest extends \PHPUnit_Framework_TestCase
+class ArrayConnectionTest extends \PHPUnit\Framework\TestCase
 {
     public function testCursors()
     {

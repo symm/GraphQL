@@ -19,7 +19,7 @@ use Youshido\Tests\DataProvider\TestEmptySchema;
 use Youshido\Tests\DataProvider\TestObjectType;
 use Youshido\Tests\DataProvider\TestSchema;
 
-class SchemaTest extends \PHPUnit_Framework_TestCase
+class SchemaTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testStandaloneEmptySchema()

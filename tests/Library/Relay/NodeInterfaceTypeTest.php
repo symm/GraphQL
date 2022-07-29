@@ -12,7 +12,7 @@ use Youshido\GraphQL\Relay\Fetcher\CallableFetcher;
 use Youshido\GraphQL\Relay\NodeInterfaceType;
 use Youshido\Tests\DataProvider\TestObjectType;
 
-class NodeInterfaceTypeTest extends \PHPUnit_Framework_TestCase
+class NodeInterfaceTypeTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testMethods()

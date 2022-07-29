@@ -22,7 +22,7 @@ use Youshido\GraphQL\Type\Scalar\StringType;
 use Youshido\GraphQL\Type\TypeMap;
 use Youshido\Tests\DataProvider\TestInputObjectType;
 
-class InputObjectTypeTest extends \PHPUnit_Framework_TestCase
+class InputObjectTypeTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testInternal()

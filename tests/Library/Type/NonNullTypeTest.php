@@ -14,7 +14,7 @@ use Youshido\GraphQL\Type\Scalar\StringType;
 use Youshido\GraphQL\Type\TypeMap;
 use Youshido\GraphQL\Type\TypeService;
 
-class NonNullTypeTest extends \PHPUnit_Framework_TestCase
+class NonNullTypeTest extends \PHPUnit\Framework\TestCase
 {
 
     /**

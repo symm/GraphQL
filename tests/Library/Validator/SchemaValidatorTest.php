@@ -18,7 +18,7 @@ use Youshido\GraphQL\Validator\SchemaValidator\SchemaValidator;
 use Youshido\Tests\DataProvider\TestEmptySchema;
 use Youshido\Tests\DataProvider\TestInterfaceType;
 
-class SchemaValidatorTest extends \PHPUnit_Framework_TestCase
+class SchemaValidatorTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @expectedException \Youshido\GraphQL\Exception\ConfigurationException

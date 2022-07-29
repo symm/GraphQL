@@ -13,7 +13,7 @@ use Youshido\GraphQL\Type\Scalar\DateTimeTzType;
 use Youshido\GraphQL\Type\Scalar\IntType;
 use Youshido\GraphQL\Type\Scalar\StringType;
 
-class InputObjectDefaultValuesTest extends \PHPUnit_Framework_TestCase
+class InputObjectDefaultValuesTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testDefaultEnum()

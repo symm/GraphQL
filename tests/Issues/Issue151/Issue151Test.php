@@ -10,7 +10,7 @@ use Youshido\GraphQL\Type\Scalar\IdType;
 use Youshido\GraphQL\Type\Scalar\StringType;
 use Youshido\GraphQL\Type\Union\UnionType;
 
-class Issue151Test extends \PHPUnit_Framework_TestCase
+class Issue151Test extends \PHPUnit\Framework\TestCase
 {
     public function testInternalVariableArgument()
     {

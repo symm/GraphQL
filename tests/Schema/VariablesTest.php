@@ -10,7 +10,7 @@ use Youshido\GraphQL\Type\Object\ObjectType;
 use Youshido\GraphQL\Type\Scalar\IdType;
 use Youshido\GraphQL\Type\Scalar\StringType;
 
-class VariablesTest extends \PHPUnit_Framework_TestCase
+class VariablesTest extends \PHPUnit\Framework\TestCase
 {
     public function testInvalidNullableList()
     {

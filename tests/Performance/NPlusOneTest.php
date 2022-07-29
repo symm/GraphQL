@@ -17,7 +17,7 @@ use Youshido\GraphQL\Type\Scalar\IdType;
 use Youshido\GraphQL\Type\Scalar\IntType;
 use Youshido\GraphQL\Type\Scalar\StringType;
 
-class NPlusOneTest extends \PHPUnit_Framework_TestCase
+class NPlusOneTest extends \PHPUnit\Framework\TestCase
 {
 
     private function getDataForPosts()

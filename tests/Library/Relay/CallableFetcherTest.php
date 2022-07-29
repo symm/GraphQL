@@ -12,7 +12,7 @@ namespace Youshido\Tests\Library\Relay;
 use Youshido\GraphQL\Relay\Fetcher\CallableFetcher;
 use Youshido\Tests\DataProvider\TestObjectType;
 
-class CallableFetcherTest extends \PHPUnit_Framework_TestCase
+class CallableFetcherTest extends \PHPUnit\Framework\TestCase
 {
     public function testMethods()
     {

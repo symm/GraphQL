@@ -5,7 +5,7 @@ namespace Youshido\Tests\Parser;
 use Youshido\GraphQL\Parser\Ast\ArgumentValue\Variable;
 use Youshido\GraphQL\Parser\Location;
 
-class VariableTest extends \PHPUnit_Framework_TestCase
+class VariableTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * Test if variable value equals expected value

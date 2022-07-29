@@ -18,7 +18,7 @@ use Youshido\Tests\DataProvider\TestConfig;
 use Youshido\Tests\DataProvider\TestConfigExtraFields;
 use Youshido\Tests\DataProvider\TestConfigInvalidRule;
 
-class ConfigTest extends \PHPUnit_Framework_TestCase
+class ConfigTest extends \PHPUnit\Framework\TestCase
 {
 
     /**

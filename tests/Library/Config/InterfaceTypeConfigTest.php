@@ -16,7 +16,7 @@ use Youshido\GraphQL\Type\Scalar\StringType;
 use Youshido\GraphQL\Validator\ConfigValidator\ConfigValidator;
 use Youshido\Tests\DataProvider\TestInterfaceType;
 
-class InterfaceTypeConfigTest extends \PHPUnit_Framework_TestCase
+class InterfaceTypeConfigTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testCreation()

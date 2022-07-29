@@ -13,7 +13,7 @@ use Youshido\GraphQL\Type\TypeMap;
 use Youshido\GraphQL\Validator\ConfigValidator\ConfigValidator;
 use Youshido\Tests\DataProvider\TestEnumType;
 
-class EnumTypeTest extends \PHPUnit_Framework_TestCase
+class EnumTypeTest extends \PHPUnit\Framework\TestCase
 {
 
     /**

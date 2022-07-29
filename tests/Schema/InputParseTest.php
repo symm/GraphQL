@@ -9,7 +9,7 @@ use Youshido\GraphQL\Type\Scalar\DateTimeType;
 use Youshido\GraphQL\Type\Scalar\DateTimeTzType;
 use Youshido\GraphQL\Type\Scalar\StringType;
 
-class InputParseTest extends \PHPUnit_Framework_TestCase
+class InputParseTest extends \PHPUnit\Framework\TestCase
 {
 
     /**
