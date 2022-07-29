@@ -19,12 +19,10 @@ class VariableTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($var->getValue(), $expected);
     }
 
-    /**
-     * @expectedException \LogicException
-     * @expectedExceptionMessage Value is not set for variable "foo"
-     */
     public function testGetNullValueException()
     {
+        $this->expectException(\LogicException::class);
+        $this->expectExceptionMessage('Value is not set for variable "foo"');
         $var = new Variable('foo', 'bar', false, false, true, new Location(1,1));
         $var->getValue();
     }

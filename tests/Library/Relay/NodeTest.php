@@ -37,7 +37,7 @@ class NodeTest extends \PHPUnit\Framework\TestCase
      */
     public function testFromGlobalIdThrowsExceptionIfGivenMalformedId($idToCheck)
     {
-        $this->setExpectedException(InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
         Node::fromGlobalId($idToCheck);
     }
 }

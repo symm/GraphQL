@@ -22,21 +22,17 @@ class ObjectTypeConfigTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($config->getName(), 'Test', 'Normal creation');
     }
 
-    /**
-     * @expectedException Youshido\GraphQL\Exception\ConfigurationException
-     */
     public function testInvalidConfigNoFields()
     {
+        $this->expectException(\Youshido\GraphQL\Exception\ConfigurationException::class);
         ConfigValidator::getInstance()->assertValidConfig(
             new ObjectTypeConfig(['name' => 'Test'], null, true)
         );
     }
 
-    /**
-     * @expectedException Youshido\GraphQL\Exception\ConfigurationException
-     */
     public function testInvalidConfigInvalidInterface()
     {
+        $this->expectException(\Youshido\GraphQL\Exception\ConfigurationException::class);
         ConfigValidator::getInstance()->assertValidConfig(
             new ObjectTypeConfig(['name' => 'Test', 'interfaces' => ['Invalid interface']], null, false)
         );

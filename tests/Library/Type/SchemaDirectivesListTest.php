@@ -35,7 +35,8 @@ class SchemaDirectivesListTest extends \PHPUnit\Framework\TestCase
 
     public function testItThrowsExceptionWhenAddingInvalidDirectives()
     {
-        $this->setExpectedException(\Exception::class, "addDirectives accept only array of directives");
+        $this->expectExceptionMessage("addDirectives accept only array of directives");
+        $this->expectException(\Exception::class);
         $directiveList = new SchemaDirectivesList();
         $directiveList->addDirectives("foobar");
     }

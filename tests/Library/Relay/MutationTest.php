@@ -30,11 +30,9 @@ class MutationTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('ship', $mutation->getName());
     }
 
-    /**
-     * @expectedException \Exception
-     */
     public function testInvalidType()
     {
+        $this->expectException(\Exception::class);
         RelayMutation::buildMutation('ship', [
             'name' => new StringType()
         ], new IntType(), function($source, $args, $info) {});

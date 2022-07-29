@@ -33,6 +33,9 @@ class ListTypeTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(new StringType(), $listType->getNamedType());
     }
 
+    /**
+     * @doesNotPerformAssertions
+     */
     public function testListOfInputsWithArguments()
     {
 

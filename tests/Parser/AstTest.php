@@ -194,11 +194,9 @@ class AstTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(new Literal('text', new Location(1,1)), $variable->getValue());
     }
 
-    /**
-     * @expectedException \LogicException
-     */
     public function testVariableLogicException()
     {
+        $this->expectException(\LogicException::class);
         $variable = new Variable('id', 'int', false, false, true, new Location(1,1));
         $variable->getValue();
     }

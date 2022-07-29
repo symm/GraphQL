@@ -19,6 +19,9 @@ use Youshido\GraphQL\Type\Scalar\StringType;
 class LoadTest extends \PHPUnit\Framework\TestCase
 {
 
+    /**
+     * @doesNotPerformAssertions
+     */
     public function testLoad10k()
     {
         $time = microtime(true);

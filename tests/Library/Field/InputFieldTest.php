@@ -105,6 +105,9 @@ query IntrospectionQuery {
             }
 TEXT;
 
+    /**
+     * @doesNotPerformAssertions
+     */
     public function testFieldWithInputFieldArgument()
     {
         $schema    = new Schema([
@@ -159,6 +162,9 @@ TEXT;
         $this->assertEquals('default', $field->getDefaultValue());
     }
 
+    /**
+     * @doesNotPerformAssertions
+     */
     public function testListAsInputField()
     {
         new InputField([
@@ -169,10 +175,10 @@ TEXT;
 
     /**
      * @dataProvider invalidInputFieldProvider
-     * @expectedException Youshido\GraphQL\Exception\ConfigurationException
      */
     public function testInvalidInputFieldParams($fieldConfig)
     {
+        $this->expectException(\Youshido\GraphQL\Exception\ConfigurationException::class);
         $field = new InputField($fieldConfig);
         ConfigValidator::getInstance()->assertValidConfig($field->getConfig());
     }

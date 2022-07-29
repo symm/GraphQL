@@ -12,6 +12,9 @@ use Youshido\GraphQL\Type\Union\UnionType;
 
 class Issue151Test extends \PHPUnit\Framework\TestCase
 {
+    /**
+     * @doesNotPerformAssertions
+     */
     public function testInternalVariableArgument()
     {
         $type1 = new ObjectType([
