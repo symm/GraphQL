@@ -37,6 +37,9 @@ class Tokenizer
 
     protected function skipWhitespace()
     {
+        if ($this->source === null) {
+            return;
+        }
         while ($this->pos < strlen($this->source)) {
             $ch = $this->source[$this->pos];
             if ($ch === ' ' || $ch === "\t" || $ch === ',') {
@@ -74,7 +77,7 @@ class Tokenizer
      */
     protected function scan()
     {
-        if ($this->pos >= strlen($this->source)) {
+        if ($this->source === null || $this->pos >= strlen($this->source)) {
             return new Token(Token::TYPE_END, $this->getLine(), $this->getColumn());
         }
 

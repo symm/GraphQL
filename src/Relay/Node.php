@@ -18,6 +18,9 @@ class Node
      */
     public static function fromGlobalId($id)
     {
+        if ($id === null) {
+            throw new \InvalidArgumentException('ID must be a valid base 64 string');
+        }
         $decoded = base64_decode($id, true);
         if (!$decoded) {
             throw new \InvalidArgumentException('ID must be a valid base 64 string');
